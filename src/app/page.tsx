@@ -1,29 +1,28 @@
 "use client";
 
 import { useState } from "react";
-import IconMorph from "@/components/IconMorph";
-import { MorphRotate, MenuX, PlusMinus } from "@/components/IconMorphAdvanced";
+import { ChevronX, MenuX, PlusMinus, MorphRotate } from "@/components/IconMorphAdvanced";
 
 const demos = [
   {
     name: "X ↔ Chevron Left",
-    component: "IconMorph",
-    description: "X morphs into chevron left using WAAPI path animation",
+    component: "ChevronX",
+    description: "X morphs into chevron with rotation",
   },
   {
     name: "Menu ↔ Close",
     component: "MenuX",
-    description: "Hamburger menu morphs into X with middle line fade",
+    description: "Hamburger menu morphs into X",
   },
   {
     name: "Plus ↔ Minus",
     component: "PlusMinus",
-    description: "Expand/collapse indicator with line fade",
+    description: "Expand/collapse indicator",
   },
   {
     name: "Rotate + Morph",
     component: "MorphRotate",
-    description: "Container rotation combined with path morph",
+    description: "Container rotation combined with icon change",
   },
 ];
 
@@ -180,8 +179,8 @@ function DemoCard({ demo }: { demo: (typeof demos)[0] }) {
       </div>
       <p className="text-sm text-muted-foreground mb-6">{demo.description}</p>
       <div className="flex items-center justify-center py-8 bg-zinc-50 dark:bg-zinc-900 rounded-lg">
-        {demo.component === "IconMorph" && (
-          <IconMorph isOpen={isOpen} onToggle={setIsOpen} />
+        {demo.component === "ChevronX" && (
+          <ChevronX isOpen={isOpen} onToggle={setIsOpen} />
         )}
         {demo.component === "MenuX" && (
           <MenuX isOpen={isOpen} onToggle={setIsOpen} />
